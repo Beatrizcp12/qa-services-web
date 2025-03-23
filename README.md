@@ -1,12 +1,28 @@
-# React + Vite
+# QA Services Web – Beatriz Custodio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my official website for **Quality Assurance (QA) services**, focused on helping digital products improve their stability, usability, and user experience before reaching production.
 
-Currently, two official plugins are available:
+## ✅ Services Offered
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Manual functional testing (web and mobile)
+- User flow testing and UX feedback
+- Regression testing
+- Detailed bug reporting with evidence
+- Cross-device testing (desktop, tablet, mobile)
+- Usability review and recommendations
 
-## Expanding the ESLint configuration
+## 🧰 Technologies Used
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+## 📬 Contact
+
+If you're building a product and want to ensure it's working flawlessly before launch, feel free to get in touch:
+
+📧 **beatrizcustodio262@yahoo.es**
+
+---
+
+Thank you for visiting!
