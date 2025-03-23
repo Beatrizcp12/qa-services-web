@@ -1,6 +1,6 @@
 function Contact({ language }) {
     return (
-      <section className="py-20 px-6 bg-gradient-to-b from-blue-50 to-white min-h-screen">
+      <section className="py-20 px-6 bg-gradient-to-b from-white to-blue-50">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-5xl font-extrabold text-blue-800 mb-6">
             {language === "en" ? "Contact Me" : "Contáctame"}

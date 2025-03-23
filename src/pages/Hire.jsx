@@ -10,7 +10,7 @@ function Hire({ language }) {
   const [selectedService, setSelectedService] = useState(services[0]);
 
   return (
-    <section className="py-20 px-6 bg-white min-h-screen">
+    <section className="py-20 px-6 bg-gradient-to-b from-white to-blue-50">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-4xl font-extrabold text-blue-800 text-center mb-10">
           {language === "en" ? "Hire QA Services" : "Contratar Servicios QA"}

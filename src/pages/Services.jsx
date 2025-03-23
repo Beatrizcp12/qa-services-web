@@ -23,24 +23,24 @@ function Services({ language }) {
     ];
   
     return (
-      <section className="py-20 px-6 bg-white text-center">
-        <h2 className="text-4xl font-bold text-blue-700 mb-10">
-          {language === "en" ? "Services Offered" : "Servicios Ofrecidos"}
-        </h2>
-        <ul className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-800">
-          {services.map((service, index) => (
-            <li
-              key={index}
-              className="border border-gray-200 p-6 rounded-xl shadow hover:shadow-md bg-gray-50"
-            >
-              {language === "en" ? service.en : service.es}
-            </li>
-          ))}
-        </ul>
+      <section className="py-20 px-6 bg-gradient-to-b from-white to-blue-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-blue-700 mb-10">
+            {language === "en" ? "Services Offered" : "Servicios Ofrecidos"}
+          </h2>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-800 text-left">
+            {services.map((service, index) => (
+              <li
+                key={index}
+                className="border border-gray-200 p-6 rounded-xl shadow hover:shadow-md bg-white"
+              >
+                {language === "en" ? service.en : service.es}
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
     );
   }
   
   export default Services;
-  
-  

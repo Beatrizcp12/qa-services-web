@@ -6,15 +6,20 @@ import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Hire from "./pages/Hire";
+import Footer from "./components/Footer";
 
 function App() {
   const [language, setLanguage] = useState("en");
 
   return (
     <Router>
-      <div className="font-sans">
-        <Navbar language={language} toggleLanguage={() => setLanguage((prev) => (prev === "en" ? "es" : "en"))} />
-        <main className="pt-20">
+      <div className="flex flex-col min-h-screen font-sans">
+        <Navbar
+          language={language}
+          toggleLanguage={() => setLanguage((prev) => (prev === "en" ? "es" : "en"))}
+        />
+
+        <main className="flex-grow pt-20">
           <Routes>
             <Route path="/" element={<Home language={language} />} />
             <Route path="/services" element={<Services language={language} />} />
@@ -23,6 +28,7 @@ function App() {
             <Route path="/hire" element={<Hire language={language} />} />
           </Routes>
         </main>
+        <Footer language={language} />
       </div>
     </Router>
   );
