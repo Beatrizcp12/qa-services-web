@@ -28,6 +28,7 @@ function App() {
             <Route path="/hire" element={<Hire language={language} />} />
           </Routes>
         </main>
+
         <Footer language={language} />
       </div>
     </Router>

@@ -1,69 +1,56 @@
-import { useState } from "react";
-
 function Hire({ language }) {
   const services = [
-    { id: 1, name: { en: "Web Functional Testing", es: "Pruebas funcionales web" }, price: 30 },
-    { id: 2, name: { en: "Mobile Regression Testing", es: "Pruebas de regresión móvil" }, price: 50 },
-    { id: 3, name: { en: "UX Review & Bug Report", es: "Análisis UX + reporte de bugs" }, price: 40 },
+    {
+      name: language === "en" ? "Web App Testing" : "Testing de Aplicaciones Web",
+      price: "50.00",
+    },
+    {
+      name: language === "en" ? "Mobile Regression Test" : "Test de Regresión Móvil",
+      price: "70.00",
+    },
+    {
+      name: language === "en" ? "UX Feedback Report" : "Informe de Usabilidad",
+      price: "40.00",
+    },
   ];
 
-  const [selectedService, setSelectedService] = useState(services[0]);
-
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-white to-blue-50">
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-4xl font-extrabold text-blue-800 text-center mb-10">
-          {language === "en" ? "Hire QA Services" : "Contratar Servicios QA"}
+    <section className="min-h-[calc(100vh-160px)] py-20 px-6 bg-gradient-to-b from-white to-blue-50">
+      <div className="max-w-3xl mx-auto text-center">
+        <h2 className="text-4xl font-bold text-blue-700 mb-8">
+          {language === "en" ? "Hire My Services" : "Contratar Servicios"}
         </h2>
-
-        <form className="space-y-6 text-gray-800">
-          {services.map((service) => (
-            <label
-              key={service.id}
-              className={`block p-4 border rounded-xl cursor-pointer transition ${
-                selectedService.id === service.id
-                  ? "border-blue-500 bg-blue-50"
-                  : "border-gray-300"
-              }`}
-            >
-              <input
-                type="radio"
-                name="qa_service"
-                value={service.id}
-                checked={selectedService.id === service.id}
-                onChange={() => setSelectedService(service)}
-                className="mr-3"
-              />
-              <span className="font-medium">
-                {language === "en" ? service.name.en : service.name.es} – {service.price}€
-              </span>
-            </label>
-          ))}
-
-          <div className="text-center pt-4">
+        <p className="text-gray-700 mb-10 text-lg">
+          {language === "en"
+            ? "Select a service below and pay securely via PayPal."
+            : "Selecciona un servicio y paga de forma segura con PayPal."}
+        </p>
+        <div className="space-y-6">
+          {services.map((service, index) => (
             <form
+              key={index}
               action="https://www.paypal.com/cgi-bin/webscr"
               method="post"
               target="_blank"
+              className="bg-white p-6 rounded-xl shadow text-left"
             >
               <input type="hidden" name="cmd" value="_xclick" />
               <input type="hidden" name="business" value="TU_CORREO_PAYPAL_AQUI" />
-              <input
-                type="hidden"
-                name="item_name"
-                value={language === "en" ? selectedService.name.en : selectedService.name.es}
-              />
-              <input type="hidden" name="amount" value={selectedService.price} />
+              <input type="hidden" name="item_name" value={service.name} />
+              <input type="hidden" name="amount" value={service.price} />
               <input type="hidden" name="currency_code" value="EUR" />
-              <button
-                type="submit"
-                className="bg-blue-600 text-white font-semibold px-8 py-3 rounded-xl hover:bg-blue-700 transition"
-              >
-                {language === "en" ? "Pay with PayPal" : "Pagar con PayPal"}
-              </button>
+              <div className="flex justify-between items-center">
+                <span className="font-medium">{service.name}</span>
+                <button
+                  type="submit"
+                  className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                >
+                  {language === "en" ? "Pay €" : "Pagar €"}{service.price}
+                </button>
+              </div>
             </form>
-          </div>
-        </form>
+          ))}
+        </div>
       </div>
     </section>
   );
